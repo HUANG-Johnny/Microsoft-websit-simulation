@@ -1,0 +1,1061 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    /* font-size: 15px; */
+    font-family: 'Segoe UI',SegoeUI,'Microsoft JhengHei',微軟正黑體,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+
+/*以下header nav-bar 的CSS*/
+
+.container{                 /*左右留白*/
+    max-width: calc(1600px + 10%);
+    margin: 0 auto;     /*置中*/
+    padding: 0 5%;
+    
+}
+
+.nav-bar {
+    height: 54px;
+    display: flex;
+}
+.nav-hamburger {
+    display: none;
+}
+
+.logo {
+    width: 137px;
+    height: 54px;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    
+    order: -1;
+}
+.logo-link {
+    width:100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+} 
+
+.logo-link img {
+    padding-left: 10px; 
+    padding-right: 18px;
+    max-width:100%;
+    max-height: 100%; 
+}
+
+#main-nav {
+    height: 100%;
+    margin-right: auto;     /*在flex排版下  把要到最右邊的元素用此方式將它們推過去*/   
+}
+
+.nav-menu {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+}
+.nav-menu-item {
+    display: inline-block;
+    position: relative;
+    font-size: 13px;
+} 
+.nav-menu-link, .nav-menu-link-more {
+    text-decoration: none;
+    display: block;
+    color: #262626;
+    margin-top: 1px;
+    padding: 16px 8px 10px;
+    border: 1px solid transparent;
+    background-color: transparent;
+    height: 48px;
+}
+
+.nav-menu-item-more {
+    display: none;
+}
+
+.nav-menu-link:hover::after{
+    content: '';
+    position: absolute;
+    top:75%;
+    left:50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 2px;
+    background-color: #000;
+    display: block;
+}
+
+.nav-menu-link-more:hover::after{
+    content: '';
+    position: absolute;
+    top:75%;
+    left:30%;
+    transform: translateX(-30%);
+    width: 45%;
+    height: 2px;
+    background-color: #000;
+    display: block;
+}
+
+
+.all-microsoft-btn, .search-btn, .shopping-cart-btn, .login-btn{
+    display: inline-block;
+    position: relative;
+    font-size: 13px;
+    text-align:center;
+    height: 100%;
+    order: 1;
+    
+}
+
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} 
+
+
+.all-microsoft>i, .search>i, .shopping-cart>i {
+    font-size: 16px;
+}
+
+
+.login>i {
+    font-size: 32px;
+}
+
+.all-microsoft>span {
+    margin-right: 3px;
+}
+
+.search>span, .shopping-cart>span, .login>span {
+    margin-right: 10px;
+}
+
+
+.all-microsoft-btn {
+    padding-right: 27px;
+}
+.search-btn {
+    padding-right: 45px;
+}
+.shopping-cart-btn {
+    padding-right: 10px;
+}
+.login-btn {
+    padding-right: 7px;
+}
+
+.other-nav-link {
+    color: #262626;
+    text-decoration: none;
+    text-align: center;
+    height: 100%;
+    line-height: 54px;
+}
+
+.all-microsoft:hover:after {
+    content: '';
+    width: 68%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    bottom: 30%;
+    left:0;
+    display: block;
+}
+.search:hover::after {
+    content: '';
+    width: 28%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    bottom: 30%;
+    left:0;
+    display: block;
+}
+
+.shopping-cart:hover:after {
+    content: '';
+    width: 50%;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    bottom: 30%;
+    left:0;
+    display: block;
+}
+
+a:focus {
+    border: 2px solid #000;
+}
+
+.logo-link:focus, .nav-menu-link:focus, .other-nav-link:focus {
+    border: 1px dashed #000;
+}
+
+
+
+/*以上header的CSS*/
+
+
+/*以下 橫幅1區 CSS*/
+.carousel {
+    position: relative;
+    width: 100%;
+    /* 
+		設計稿上，寬度是 1920px 的情況下，carousel-img 的高為 600px，
+		所以寬高比為： (600 / 1920) * 100% = 31.25%
+		因為寬度 1920px 其實就是 100vw，所以單位替換成 vw
+	*/
+    height: 31.25vw;    /*為了做div等比縮放 所以做此計算*/
+
+}
+
+.banner-1-carousel-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/banner-1-img/banner-1-img1-1600x600.png);
+    background-size: cover;
+    z-index: -1;
+}
+.carousel-info-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-info {
+    margin: 0 5%;
+    width: 520px;
+
+}
+
+.carousel-info-head {
+    font-size: 34px;
+    line-height: 40px;  
+    margin: 0;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+.carousel-info-paragraph {
+    margin: 10px 0 20px;
+}
+
+.carousel-info-paragraph>p{
+    margin: 0;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;       /*字體粗細*/
+}
+
+.carousel-info-link {
+    padding: 8px 0;
+    position: relative;
+
+}
+.carousel-info-link>a {
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    padding: 8px 20px;
+    color: white;
+    background-color: #000;
+}
+
+.carousel-info-link>a:hover::after{
+    content: '';
+    width: 11.5%;
+    height: 2px;
+    background-color: white;
+    position: absolute;
+    bottom: 10%;
+    left: 4%;
+    transform: translateX(-4%);
+    display: block;
+}
+
+.banner-1-carousel-player {
+    /* border: 1px solid; */
+    position: absolute;
+    bottom: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+
+
+.player-btn{
+    color: #000;
+    text-decoration: none;
+    vertical-align: middle;
+    font-size: 30px;
+    line-height: 40px;
+    margin-right: 5px;
+}
+
+.play {
+    margin-left: 25px;
+}
+
+.dot {
+    font-size: 10px;
+}
+
+
+
+
+
+/*以上 橫幅1區 CSS*/
+
+
+/*以下 有三個服務的區 CSS*/
+.service-menu {
+    width: 100%;
+    padding: 48px 0;
+
+    display: flex;          /*置中*/
+    justify-content:center;
+    align-items: center;
+    
+}
+.service-menu-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+}
+.service-menu-item {
+    display: inline-block;
+    
+}
+
+.service-menu-link {
+    text-decoration: none;
+    position: relative;
+    width: 184px;
+    display: flex;           /*置中*/
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    padding: 12px 6px;
+    font-size: 15px;
+}
+
+.service-menu-link>div {
+    width: 125px;
+    color: #000;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: center;
+}
+
+.service-menu-link:hover{
+    text-decoration: underline;
+    text-decoration-color: #000;
+}
+
+/*以上 有三個服務的區 CSS*/
+
+
+/*以下 產品展示的區 CSS*/
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+
+    /* 因為子元素的 col 左右推 12px 導致內容縮小了，所以要用 margin 扣回去 */
+    margin: -48px -12px 0 -12px;
+    
+}
+
+.col-4 {
+    width: calc(100%/4);
+    padding: 0 12px;
+    margin-top: 48px;
+    
+}
+
+.product-card-img1, .product-card-img2, .product-card-img3, .product-card-img4 {
+    width: 100%;
+
+    /*
+        寬高比為： (214 / 1920) * 100% = 11.14583%
+        因為寬度 1920px 其實就是 100vw，所以單位替換成 vw
+                 1920:100 == 214:11.14573
+    */
+    height: 11.14583vw;
+
+    background-size: cover;
+}
+
+.product-card-img1 {
+    background-image: url(../img/product-img/product-img1-1920.png);
+}
+.product-card-img2 {
+    background-image: url(../img/product-img/product-img2-1920.png);
+}
+.product-card-img3 {
+    background-image: url(../img/product-img/product-img3-1920.png);
+}
+.product-card-img4 {
+    background-image: url(../img/product-img/product-img4-1920.png);
+}
+
+.card-title {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    opacity: 0.95;     /* 不透明度*/
+    padding: 1px 12px 2px 0;
+    margin-top: 37px;
+    margin-bottom: 0px;
+
+}
+
+.card-description {
+    font-size: 15px;
+    margin: 0;
+    padding: 2px 12px 0 0;
+}
+
+.card-link {
+    display: inline-block;
+    padding: 10px 3px 7px 0;
+    color: #0067b8;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.card-info {
+    position: relative;
+}
+.card-link:hover:after{
+    content: '';
+    width: 19%;
+    height: 2px;
+    background-color: #0067b8;
+    position: absolute;
+    display: block;
+    
+}
+
+/*以上 產品展示的區 CSS*/
+
+
+/*以下 橫幅2區 CSS*/
+
+#banner-2 {
+    padding-top: 48px;
+}
+
+.banner-2-carousel-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/banner-2-img/banner-2-img1-1600x600.png);
+    background-size: cover;
+    z-index: -1;
+
+}
+
+/*以上 橫幅2區 CSS*/
+
+
+/*以下 商務展示的區 CSS*/
+
+.business-title>h2 {
+    margin: 0;
+    padding: 48px 0 20px;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 600;
+}
+
+.business-card-img1, .business-card-img2, .business-card-img3, .business-card-img4 {
+    width: 100%;
+
+    /*
+        寬高比為： (214 / 1920) * 100% = 11.14583%
+        因為寬度 1920px 其實就是 100vw，所以單位替換成 vw
+                 1920:100 == 214:11.14573
+    */
+    height: 11.14583vw;
+
+    background-size: cover;
+}
+
+.business-card-img1 {
+    background-image: url(../img/business-img/business-img1-1920.png);
+}
+.business-card-img2 {
+    background-image: url(../img/business-img/business-img2-1920.png);
+}
+.business-card-img3 {
+    background-image: url(../img/business-img/business-img3-1920.png);
+}
+.business-card-img4 {
+    background-image: url(../img/business-img/business-img4-1920.png);
+}
+
+/*以上 商務展示的區 CSS*/
+
+
+/*以下 關注社群區 CSS*/
+
+.soccial-bar {
+    display: flex;
+    margin-top: 36px;
+
+}
+
+.social-title, .social-menu, .social-menu-list, .social-menu-item{
+    display: inline-block;
+}
+
+.social-menu-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.social-title {
+    font-size: 15px;
+    line-height: 32px;
+    color: rgba(0,0,0,.6);
+    padding-right: 12px;
+    margin-bottom: 4px;
+    
+}
+
+.social-menu-link {
+    border: 2px solid transparent;
+    width: 32px;
+    height: 32px;
+    margin-right: 12px;
+}
+
+/*以上 關注社群區 CSS*/
+
+
+/*以下footer nav-bar 的CSS*/
+footer {
+    margin-top:48px;
+    background-color: #f2f2f2;
+}
+
+
+.footer-nav-bar-row {
+    display: flex;
+    flex-wrap: wrap;
+
+    /* 因為子元素的 col 左右推 6px 導致內容縮小了，所以要用 margin 扣回去 */
+    margin: 0 -6px;
+}
+
+.footer-nav-bar-col-6 {
+    width: calc(100%/6);
+    padding: 0 6px;
+
+}
+
+.footer-nav-bar-menu-title {
+    padding: 36px 0 4px;
+    font-weight: 600;
+    color: #616161;
+    word-break: break-word;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.footer-nav-bar-menu-title-list {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+}
+
+.footer-nav-bar-menu-item{
+    padding: 4px 0;
+}
+
+.footer-nav-bar-menu-link {
+    text-decoration: none;
+    color: #616161;
+    word-break: break-word;
+    font-size: 11px;
+    line-height: 16px;
+}
+
+
+
+.footer-nav-bar-end {
+    font-size: 11px;
+    line-height: 16px;
+    display: inline-block;
+    padding:30px 0 16px 0;
+    color: #616161;
+    white-space: nowrap;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-nav-bar-end-other {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    /* display: inline-block; */
+    
+}
+
+.language-link>i {
+    font-size: 20px;
+    line-height: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+    
+}
+
+.other-item {
+    display: inline-block; 
+    padding: 0 24px 4px 0;
+    
+}
+
+.language-link, .other-item-link {
+    text-decoration: none;
+    color: inherit;      /*繼承*/
+}
+
+.footer-nav-bar-menu-link:hover, .language-link:hover, .other-item-link:hover {
+    text-decoration: underline;
+    text-decoration-color: #000;
+}
+
+.footer-nav-bar-menu-link:focus, .language-link:focus, .other-item-link:focus {
+    border: 1px dashed #000;
+}
+
+/*以上footer nav-bar 的CSS*/
+
+
+
+@media screen and (max-width:1399px) {
+    
+    .search>span, .shopping-cart>span, .login>span{
+        display: none;
+    }
+    .search:hover::after, .shopping-cart:hover:after  {
+        display: none;
+    }
+
+    
+
+    .all-microsoft-btn {
+        padding-right: 33px;
+    }
+    .search-btn,.login-btn {
+        padding-right: 15px;
+    }
+    .shopping-cart-btn {
+        padding-right: 13px;
+    }
+
+
+    .carousel-info {
+        width: 440px;    
+    }
+    .carousel-info-head{
+        font-size: 24px;
+    }
+    .carousel-info-link>a:hover::after{
+        width: 14%;
+        left: 4.5%;
+        
+    }
+
+    .card-link:hover:after{
+        width: 22%;
+
+    }
+
+
+}
+
+@media screen and (max-width:1083px) {
+    
+    .container-nav-set {
+        width: 100%;
+        padding: 0 24px;
+    }
+
+
+    .container-full{                 
+        width: 100%;
+        padding: 0;
+    }
+
+    .container-card-set{
+        width: 100%;
+        padding-left: calc(5% - 12px);
+        padding-right: calc(5% - 12px);
+    }
+    
+
+    .carousel {
+        position: relative;
+        width: 100%;
+
+        /* 
+		    設計稿上，寬度是 1083px 的情況下，carousel-img 的高為 600px，
+		    所以寬高比為： (600 / 1083) * 100% = 55.402%
+		    因為寬度 1920px 其實就是 100vw，所以單位替換成 vw
+	    */
+        height: 55.402vw;    
+
+    }
+    .banner-1-carousel-img {
+        background-image: url(../img/banner-1-img/banner-1-img1-1083x609.png);
+    }
+
+    .banner-2-carousel-img {
+        background-image: url(../img/banner-2-img/banner-2-img1-1083x609.png);
+    }
+
+
+    .carousel-info {
+        width: 340px;    
+    }
+
+    .carousel-info-link>a:hover::after{
+        width: 18%;
+        left: 6.5%;
+        
+    }
+
+    .container-full{                 
+        width: 100%;
+        padding: 0;
+    }
+
+    .col-4 {
+        width: calc(100%/2);
+    }
+
+    .product-card-img1, .product-card-img2, .product-card-img3, .product-card-img4,
+    .business-card-img1, .business-card-img2, .business-card-img3, .business-card-img4 {
+        height: 24.5614vw;
+    }
+
+    .product-card-img1 {
+        background-image: url(../img/product-img/product-img1-1083.png);
+    }
+    .product-card-img2 {
+        background-image: url(../img/product-img/product-img2-1083.png);
+    }
+    .product-card-img3 {
+        background-image: url(../img/product-img/product-img3-1083.png);
+    }
+    .product-card-img4 {
+        background-image: url(../img/product-img/product-img4-1083.png);
+    }
+    
+    .business-card-img1 {
+        background-image: url(../img/business-img/business-img1-1083.png);
+    }
+    .business-card-img2 {
+        background-image: url(../img/business-img/business-img2-1083.png);
+    }
+    .business-card-img3 {
+        background-image: url(../img/business-img/business-img3-1083.png);
+    }
+    .business-card-img4 {
+        background-image: url(../img/business-img/business-img4-1083.png);
+    }
+
+    .footer-nav-bar-col-6 {
+        width: calc(100%/3);
+    }
+
+    .card-link:hover:after{
+        width: 14%;
+    }
+    .soccial-bar {
+        padding: 0 24px;
+    }
+
+
+    @media screen and (max-width:870px){
+
+        .nav-menu-item-more {       /*叫出更多按鈕*/
+            display: inline-block;
+        }
+
+        .nav-menu-item-reduce1 {    /*收回 Xbox 支援 按鈕*/
+            display: none;
+        }
+
+        .card-link:hover:after{
+            width: 17%;
+        }
+
+    }
+
+    @media screen and (max-width:860px){
+        .nav-menu-item-reduce2 {    /*收回 Surface 按鈕*/
+            display: none;
+        }
+
+    }
+
+    @media screen and (max-width:842px){
+
+        /*header nav-bar 排版更新*/
+
+        .container-nav-set {
+            width: 100%;
+            padding: 0;
+        }
+
+        .nav-hamburger {
+            display: flex;
+        }
+        .nav-hamburger-link {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            text-decoration: none;
+            margin-top: 5px;
+            color: #000;
+        }
+
+        #main-nav {
+            display: none;
+        }
+
+        .all-microsoft-btn {
+            display: none;
+        }
+        
+        .logo {
+            order: 1;
+            margin: 0 auto;
+            /* position: absolute;
+            top:0;
+            left: 50%;
+            transform: translateX(-50%); */
+        }
+        
+        .search-btn {
+            order: 0;
+            padding-left: 10px;
+        }
+        
+        .shopping-cart {
+            padding-right: 13px;
+        }
+    }
+
+    @media screen and (max-width:767px){
+
+        /*橫幅區重新排版*/
+
+        .carousel{
+            /*
+                原本是給一個固定的 height 去等比縮放
+                但現在要讓子元素去將自己撐開 , 所以改auto
+            */
+            height: auto;   
+        
+
+        }
+        .banner-1-carousel-img, .banner-2-carousel-img {       
+            position: relative;     /*不再讓它脫離排版系統*/
+            
+            /*
+                原本在等比縮放的是 carousel , 現在將改為只有img區塊等比縮放
+                接著讓 carousel 的高由 img區塊與 info區塊 撐開
+            */
+            height: 55.402vw;       
+
+        }
+
+        .carousel-info-container {
+            height: 320px;
+            justify-content: center;
+            background-color: #E6E6E6;
+
+        }
+        .carousel-info {
+            width: 651px;
+            text-align: center;
+        }
+
+
+        .banner-1-carousel-img {
+            background-image: url(../img/banner-1-img/banner-1-img1-767x431.png);
+        }
+
+        .banner-2-carousel-img {
+            background-image: url(../img/banner-2-img/banner-2-img1-767x431.png)
+        }
+
+        .carousel-info-link>a:hover:after{
+            width: 9.5%;
+            left: 49%;
+            transform: translateX(-50%);
+        }
+
+        .service-menu {
+            justify-content: start;
+        }
+        .service-menu-item {
+            display: block;
+        }
+
+        .service-menu-link {
+           flex-direction: row;
+           justify-content: flex-start;
+           width: auto;
+        }
+        .service-menu-link>img {
+            width: 20px;
+            margin-right: 8px;
+        }
+        .service-menu-link>div {
+            width: auto;
+        }
+
+        .product-card-img1 {
+            background-image: url(../img/product-img/product-img1-767.png);
+        }
+        .product-card-img2 {
+            background-image: url(../img/product-img/product-img2-767.png);
+        }
+        .product-card-img3 {
+            background-image: url(../img/product-img/product-img3-767.png);
+        }
+        .product-card-img4 {
+            background-image: url(../img/product-img/product-img4-767.png);
+        }
+        
+        .business-card-img1 {
+            background-image: url(../img/business-img/business-img1-767.png);
+        }
+        .business-card-img2 {
+            background-image: url(../img/business-img/business-img2-767.png);
+        }
+        .business-card-img3 {
+            background-image: url(../img/business-img/business-img3-767.png);
+        }
+        .business-card-img4 {
+            background-image: url(../img/business-img/business-img4-767.png);
+        }
+
+        .card-link:hover:after{
+            width: 20%;
+        }
+
+
+        .footer-nav-bar-end {
+            flex-direction: column;
+        }
+        
+        .footer-nav-bar-end-other {
+            margin-top: 15px;
+        }
+        .other-item {
+            padding-right: 9px;
+        }      
+    }
+
+    @media screen and (max-width:539px){
+
+        .banner-1-carousel-img {
+            background-image: url(../img/banner-1-img/banner-1-img1-539x303.png);
+        }
+
+        .banner-2-carousel-img {
+            background-image: url(../img/banner-2-img/banner-2-img1-539x303.png)
+        }
+
+        .carousel-info-link>a:hover:after{
+            width: 13%;
+            left: 48.5%;
+            transform: translateX(-50%);
+        }
+
+
+        .col-4 {
+            width: 100%;
+        }
+    
+        .product-card-img1, .product-card-img2, .product-card-img3, .product-card-img4,
+        .business-card-img1, .business-card-img2, .business-card-img3, .business-card-img4 {
+            height: 50.092vw;
+        }
+    
+        .product-card-img1 {
+            background-image: url(../img/product-img/product-img1-539.png);
+        }
+        .product-card-img2 {
+            background-image: url(../img/product-img/product-img2-539.png);
+        }
+        .product-card-img3 {
+            background-image: url(../img/product-img/product-img3-539.png);
+        }
+        .product-card-img4 {
+            background-image: url(../img/product-img/product-img4-539.png);
+        }
+        
+        .business-card-img1 {
+            background-image: url(../img/business-img/business-img1-539.png);
+        }
+        .business-card-img2 {
+            background-image: url(../img/business-img/business-img2-539.png);
+        }
+        .business-card-img3 {
+            background-image: url(../img/business-img/business-img3-539.png);
+        }
+        .business-card-img4 {
+            background-image: url(../img/business-img/business-img4-539.png);
+        }
+
+        .card-link:hover:after{
+            width: 13%;
+        }
+
+        .footer-nav-bar-col-6 {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width:511px){
+        .other-item {
+            float: left;
+        }
+
+    }
+}
+
+
+
+
+
+
+
